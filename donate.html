@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NUSO-Donation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+
+  <style>
+    body {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://example.com/your-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      font-family: 'Open Sans', sans-serif; /* Added a default font-family */
+      margin: 0;
+      padding: 0;
+    }
+
+    .donation-form-container {
+      max-width: 80%;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://example.com/your-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .donation-form-container input,
+    .donation-form-container select,
+    .donation-form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+
+    .donate-button {
+      color: #0c0b0b;
+      padding: 10px 15px;
+      border: 2px solid #cda45e;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+      display: inline-block; /* Ensures button stays on one line */
+    }
+
+    .donate-button:hover {
+      background-color: #cda45e;
+      border-color: #cda45e;
+    }
+
+    .mpesa-instructions {
+      display: none;
+      margin-top: 20px;
+      background-color: #28a745;
+      padding: 15px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .donation-form-container {
+        max-width: 90%;
+      }
+    }
+  </style>
+
+  <!-- Favicons
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/nuso.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- <link href="assets/css/tution.css" rel="stylesheet"> -->
+
+  
+</head>
+
+<body>
+
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-phone d-flex align-items-center">
+                <span class="d-none d-md-inline">0748311466</span> <!-- Visible on medium and larger screens -->
+                <span class="mx-3">|</span>
+            </i>
+            
+            <a href="mailto:nubianstudentsorganization@gmail.com" class="d-flex align-items-center" style="color: white; margin-left: 10px;">
+                <i class="fas fa-envelope"></i>
+                <span class="d-none d-md-inline">nubianstudentsorganization@gmail.com</span> <!-- Visible on medium and larger screens -->
+            </a>
+        </div>
+    </div>
+</div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <!-- <h1 class="logo me-auto me-lg-0"><a href="index.html">Restaurantly</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+
+      <a href="index.html" aria-label="Home" class="logo me-auto me-lg-0">
+        <img src="assets/img/logo.png" alt="" class="img-fluid">
+      </a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#menu">Achievements</a></li>
+          <li><a class="nav-link scrollto" href="index.html#specials">Projects</a></li>
+          <li><a class="nav-link scrollto" href="index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="index.html#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="iftar.html">Iftar Program</a></li>
+              </li>
+              <li><a href="tution.html">Tuition Program</a></li>
+              <li><a href="mentorship.html">Mentorship Program</a></li>
+              <li><a href="childrenhome.html">Children's Home Visit</a></li>
+            </ul>
+          </li>
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="donate.html" class="book-a-table-btn scrollto d-none d-lg-flex">Donate</a>
+
+    </div>
+  </header><br><br><!-- End Header -->
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2></h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Donate</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- Donate Section -->
+  <section id="donate" class="donate">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card donation-form-container">
+            <h2 class="card-title text-center mb-4">Make a Difference</h2>
+            <p class="text-center">Your generous donation helps us support our community and make a positive impact. Thank you for your contribution!</p>
+            <hr>
+
+            <!-- Donation Form -->
+            <form id="donationForm">
+              <!-- Donation Amount -->
+              <div class="form-group">
+                <label for="amount">Amount (USD)</label>
+                <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter amount" required>
+              </div>
+
+              <!-- Donor Information -->
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Your Full Name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select class="form-control" id="paymentMethod" name="paymentMethod" required onchange="toggleMpesaInstructions()">
+                  <option value="" disabled selected>Select Payment Method</option>
+                  <option value="creditCard">Credit Card</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="mpesa">M-Pesa</option>
+                  <!-- Add more payment methods as needed -->
+                </select>
+              </div>
+
+              <!-- Credit Card Details -->
+              <div id="creditCardDetails" style="display: none;">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Enter card number">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV">
+                  </div>
+                </div>
+              </div>
+
+              <!-- M-Pesa Instructions -->
+              <div id="mpesaInstructions" class="mpesa-instructions">
+                <h4>M-Pesa Instructions</h4>
+                <p>To make a donation through M-Pesa, follow these steps:</p>
+                <ol>
+                  <li>Go to your M-Pesa menu on your mobile phone.</li>
+                  <li>Select "Lipa na M-Pesa."</li>
+                  <li>Select "Pay Bill."</li>
+                  <li>Enter the Pay Bill number: 247247</li>
+                  <li>Account no / Equity till: 0759241152</li>
+                  <li>Enter your donation amount.</li>
+                  <li>Enter your M-Pesa PIN.</li>
+                  <li>Confirm the details and press "OK."</li>
+                </ol>
+              </div>
+
+              <!-- Donate Button -->
+              <button type="button" class="donate-button" onclick="submitDonation()">Donate Now</button>
+            </form>
+
+            <hr>
+
+            <!-- Acknowledgment -->
+            <p class="text-center">We appreciate your support in advancing our mission. Nubian Students Organization thanks you for making a difference!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>NUSO</h3>
+              <p>
+                Kibra Makina <br>
+                Nairobi, KENYA<br><br>
+                <strong>Phone:</strong> +254 48 311 466<br>
+                <strong>Email:</strong> nubianstudentsorganization@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="iftar.html">Iftar Program</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="tution.html">Tution Program</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="mentorship.html">Mentorship Program</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="childrenhome.html">Children's Home Visit</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Explore our newsletter for the latest insights and updates</p>
+            <form id="newsletterForm" action="https://formspree.io/f/xvoeowrb">
+                <input type="email" name="email" id="emailInput" required>
+                <input type="submit" value="Subscribe">
+            </form>
+            <div id="successMessage" style="display: none;">
+                Thank you for subscribing!
+            </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+      
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NUSO</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Hamisi Hassan</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <!-- Include these scripts at the end of the body to improve page loading performance -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+    
+        // Perform any additional actions here (e.g., AJAX request, analytics tracking)
+    
+        // Display success message
+        document.getElementById('successMessage').style.display = 'block';
+    });
+    </script>
+     <script>
+      
+        // Show/hide credit card details based on the selected payment method
+        document.getElementById("paymentMethod").addEventListener("change", function () {
+          var creditCardDetails = document.getElementById("creditCardDetails");
+          if (this.value === "creditCard") {
+            creditCardDetails.style.display = "block";
+          } else {
+            creditCardDetails.style.display = "none";
+          }
+        });
+      </script>
+       <!-- Custom JavaScript -->
+    <script>
+        // Function to handle donation submission
+        function submitDonation() {
+          // Get form data
+          var formData = new FormData(document.getElementById("donationForm"));
+    
+          // You can add additional logic here, such as sending the data to a server or processing it further
+    
+          // For demonstration purposes, log the form data to the console
+          console.log("Donation Details:", Object.fromEntries(formData));
+        }
+    
+        // Show/hide credit card details based on the selected payment method
+        document.getElementById("paymentMethod").addEventListener("change", function () {
+          var creditCardDetails = document.getElementById("creditCardDetails");
+          if (this.value === "creditCard") {
+            creditCardDetails.style.display = "block";
+          } else {
+            creditCardDetails.style.display = "none";
+          }
+        });
+      </script>
+      <script>
+        // Function to show/hide M-Pesa instructions
+        function toggleMpesaInstructions() {
+          var mpesaInstructions = document.getElementById("mpesaInstructions");
+          var paymentMethod = document.getElementById("paymentMethod");
+    
+          if (paymentMethod.value === "mpesa") {
+            mpesaInstructions.style.display = "block";
+          } else {
+            mpesaInstructions.style.display = "none";
+          }
+        }
+      </script>
+</body>
+</html>
